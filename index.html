@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="css/valentine.css" />
   </head>
   <body>
-    <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
+    <div id="valentineQuestion"><b>DEVIKA WILL YOU BE MY VALENTINE?</b></div>
     <button class="answerButton" onclick="location.href='thankyou.html'">
       Yes
     </button>
-    <button class="answerButton" id="noButton">I no no wanna o(╥﹏╥)o</button>
+    <button class="answerButton" id="noButton">NO!</button>
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
 
     <script>
-      document
-        .getElementById("noButton")
-        .addEventListener("click", function () {
+      var clickCount = 0;
+      document.getElementById("noButton").addEventListener("click", function () {
+          clickCount++
           var yesButton = document.querySelector(
             'button[onclick*="thankyou.html"]'
           );
@@ -26,6 +26,11 @@
             window.getComputedStyle(yesButton).fontSize
           );
           yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+          var noButton = document.getElementById("noButton");
+          if (clickCount = 1)
+            noButton.innerHTML = "You Are breaking my heart :(";
+          else
+          noButton.innerHTML = "You Are breaking my heart :)";
         });
     </script>
   </body>
